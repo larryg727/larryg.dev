@@ -51,6 +51,13 @@
         font-size: 1.8rem;
         font-weight: 600;
         text-align: left;
+
+        @include respond(tab-port) {
+          text-align: center;
+        }
+        @include respond(phone) {
+          text-align: center;
+        }
       }
 
       &-text {
