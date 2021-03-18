@@ -36,10 +36,11 @@ const cfg = {
 
 if (process.env.CONTEXT === 'production') {
   const googleAnalyticsCfg = {
-    resolve: 'gatsby-plugin-google-analytics',
+    resolve: `gatsby-plugin-google-gtag`,
     options: {
-      trackingId: 'G-0Q190QHHMH', // <- your tracking ID
-    }
+      // You can add multiple tracking ids and a pageview event will be fired for all of them.
+      trackingIds: ['G-0Q190QHHMH'],
+    },
   };
   cfg.plugins.push(googleAnalyticsCfg);
 }
