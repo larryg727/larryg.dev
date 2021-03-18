@@ -1,4 +1,4 @@
-module.exports = {
+const cfg = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
@@ -33,3 +33,15 @@ module.exports = {
     },
   ],
 };
+
+if (process.env.CONTEXT === 'production') {
+  const googleAnalyticsCfg = {
+    resolve: 'gatsby-plugin-google-analytics',
+    options: {
+      trackingId: 'G-0Q190QHHMH', // <- your tracking ID
+    }
+  };
+  cfg.plugins.push(googleAnalyticsCfg);
+}
+
+module.exports = cfg;
